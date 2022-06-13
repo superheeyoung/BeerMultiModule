@@ -8,6 +8,7 @@ sealed class Resource<out T> {
 
     object Loading : Resource<Nothing>()
     object Error : Resource<Nothing>()
+    object Empty : Resource<Nothing>()
 
 
     inline fun <reified T, reified V> Resource<T>.mapToEntity(callback : (value : T) -> V) : Resource<V> {
@@ -15,6 +16,7 @@ sealed class Resource<out T> {
             is Resource.Success -> Resource.Success(callback(value))
             is Resource.Error -> Resource.Error
             is Resource.Loading -> Resource.Loading
+            is Resource.Empty -> Resource.Empty
         }
     }
 }

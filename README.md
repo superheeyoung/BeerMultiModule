@@ -4,4 +4,6 @@
 3. Flow 
 4. StateFlow
 5. Hilt 
-6. RecyclerView
+6. Clean Architecture
+7. MVVM 
+8. RecyclerView
